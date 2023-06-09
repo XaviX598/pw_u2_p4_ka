@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taller13 Introduccion Vue</title>
+    <title>Taller14 Introduccion Vue</title>
 </head>
+
 <body>
     <header>
 
@@ -14,9 +16,33 @@
 
     </nav>
     <section>
+        <h1>Inicio</h1>
+        <!-- dentro de las dos llaves va codigo javascript aqui va a imprimir como texto y no 2-->
+        <p>{{1+1}}</p>
+        <!-- todo lo que este dentro dediv pasa a formar parte del control de vue -->
+        <!-- en la pagina html en la seccion que tengo bajo el control de vue si queremos usar sentenciass js debemos hacerlo mediante {{}} -->
         <div id="miAplicacion">
+            <!-- <h1>Hola Mundo</h1> -->
+            <!-- <p>Desde Vue.js</p> -->
+            <p>{{1+1}}</p>
+            <!-- aqui se imprime como booleano no como texto -->
+            <p>{{true}}</p>
+            <!-- declaramos un ternario para verificar que lo anterior es booleano y no un texto -->
+            <p>{{true?'Activo': 'Inactivo'}}</p>
+            <h4>nombre</h4>
+            <h4>{{nombre}}</h4>
+            <h4>apellido</h4>
+            <h4>{{apellido}}</h4>
+            <h4>mensaje</h4>
+            <h4>{{mensaje}}</h4>
 
+            <!-- vue maneja un concepto que se llama directivas y para muchas de las funcionaluidades que tengamos vamos a 
+            usar directivas, la primera es para los eventos esta es v-on, esta directiva se la declara dento del elemento html
+        si solo ponesmos v-on es general pero si queremos especificar ponemos ="nombre" si tiene argumentos se pone () si no, no-->
+            <button v-on:click="cambiarNombre">Cambiar Nombre</button>
+            <button v-on:click="cambiarApellido">Cambiar Apellido</button>
         </div>
+        <h1>Fin</h1>
     </section>
     <footer>
 
@@ -24,4 +50,5 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/app.js"></script>
 </body>
+
 </html>
