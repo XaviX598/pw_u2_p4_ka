@@ -16,12 +16,55 @@
     </nav>
     <section>
         <div id="miAplicacion2">
+            <h4>Estudiantes UCE</h4>
+            <!-- la directiva v-model para la entrada -->
+            <!-- v-on:keypress evento al presionar una tecla -->
+            <!-- <input type="text" v-model="nombre" v-on:keypress="agregarEstudiante">
+            <h1>{{nombre}}</h1> -->
+            <!-- el .enter luego de keypress es un modificador de evento -->
+            <input type="text" v-model="nombre" v-on:keypress.enter="agregarEstudiante2">
+            <h1>{{nombre}}</h1>
+            <input type="text" v-model="apellido" v-on:keypress.enter="agregarEstudiante2">
+            <h1>{{apellido}}</h1>
+            <!-- <input type="text" v-model="apellido" v-on:keypress.enter="agregarEstudiante">
+            <h1>{{apellido}}</h1> -->
+            <!-- br es para salto de linea
+            <br> -->
+            <!-- hr una linea -->
+            <hr>
+            <h3>Lista estudiantes </h3>
+            <!-- <ul>
+                forma tradicional
+                <li>{{miarreglo[0].nombre + " " + miarreglo[3].apellido}}</li>
+                <li>{{miarreglo[1].apellido}}</li>
+                <li>{{miarreglo[2]}}</li>
+                <li>{{miarreglo[3]}}</li>
+                <li>{{miarreglo[4]}}</li>
+                <li>{{miarreglo[5]}}</li>
+                <li>{{miarreglo[6]}}</li>
+                <li>{{miarreglo[7]}}</li>
+                <li>{{miarreglo[8]}}</li>
+                <li>{{miarreglo[9]}}</li>
+            </ul> -->
 
+            <ul>
+                <!-- sobre el elemento que queremos que itere o se repida usamos V-For -->
+                <!-- index es si queremos usar un indice  -->
+                <li v-for="({nombre,apellido}, index) in miarreglo">
+                    <span>{{index+1}}-{{nombre}}</span>
+                    <blockquote>{{apellido}}</blockquote>
+                </li>
+                <!-- para desestructurar un objeto -->
+                <!-- <li v-for="{nombre,apellido} in mi arreglo">
+                    <span>{{nombre}}</span>
+                    <blockquote>{{apellido}}</blockquote>
+                </li> -->
+            </ul>
         </div>
     </section>
     <footer>
 
     </footer>
-    <script src="js/vFor.js"></script>
+    <script src="../js/vFor.js"></script>
 </body>
 </html>
