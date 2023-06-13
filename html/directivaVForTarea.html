@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VFor</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="../css/directivaVForTarea.css">
+</head>
+
+<body>
+    
+    <header>
+        <h1>DATOS PERSONALES</h1>
+    </header>
+    <nav>
+
+    </nav>
+    <section>
+        <h3>Ingrese su datos personales</h3>
+        <div id="miApp" class="container">
+
+
+            <div class="formulario">
+                <label for="nombreIngresado">Ingrese su nombre: </label>
+                <input id="nombreIngresado" type="text" v-model="nombre" v-on:keypress.enter="agregarPersona">
+                <br>
+                <br>
+                <label for="apellidoIngresado">Ingrese su apellido: </label>
+                <input id="apellidoIngresado" type="text" v-model="apellido" v-on:keypress.enter="agregarPersona">
+                <br>
+                <br>
+                <label for="edadIngresada">Ingrese su edad: </label>
+                <input id="edadIngresada" type="number" v-model="edad" v-on:keypress.enter="agregarPersona">
+                <br>
+                <br>
+                <label for="numeroIngresado">Ingrese su numero de tarjeta: </label>
+                <input id="numeroIngresado" type="number" v-model="numeroTarjeta" v-on:keypress.enter="agregarPersona">
+                <!-- <h5>Ingrese su nombre: </h5>
+                <input type="text" v-model="nombre" v-on:keypress.enter="agregarPersona">
+                <h5>Ingrese su apellido: </h5>
+                <input type="text" v-model="apellido" v-on:keypress.enter="agregarPersona">
+                <h5>Ingrese su edad: </h5>
+                <input type="number" v-model="edad" v-on:keypress.enter="agregarPersona">
+                <h5>Ingrese su número de tarjeta: </h5>
+                <input type="number" v-model="numeroTarjeta" v-on:keypress.enter="agregarPersona"> -->
+            </div>
+
+            <!-- </div> -->
+            <h2>LISTADO DE PERSONAS</h2>
+            <div id="miApp" class="listado">
+                <ul>
+
+                    <li v-for="({nombre,apellido,edad,numeroTarjeta}, index) in miarreglo">
+                        <span>{{index+1}}.- {Nombre: {{nombre}}}, {Apellido: {{apellido}}}, {Edad: {{edad}}}, {Numero
+                            de la tarjeta: {{numeroTarjeta}}}</span>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+
+    </section>
+    <footer>
+
+    </footer>
+    <script src="../js/vForTarea.js"></script>
+</body>
+
+</html>
