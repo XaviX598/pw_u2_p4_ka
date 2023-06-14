@@ -25,19 +25,21 @@
 
             <div class="formulario">
                 <label for="nombreIngresado">Ingrese su nombre: </label>
-                <input id="nombreIngresado" type="text" v-model="nombre" v-on:keypress.enter="agregarPersona">
+                <input id="nombreIngresado" type="text" v-model="nombre">
                 <br>
                 <br>
                 <label for="apellidoIngresado">Ingrese su apellido: </label>
-                <input id="apellidoIngresado" type="text" v-model="apellido" v-on:keypress.enter="agregarPersona">
+                <input id="apellidoIngresado" type="text" v-model="apellido" >
                 <br>
                 <br>
                 <label for="edadIngresada">Ingrese su edad: </label>
-                <input id="edadIngresada" type="number" v-model="edad" v-on:keypress.enter="agregarPersona">
+                <input id="edadIngresada" type="number" v-model="edad">
                 <br>
                 <br>
                 <label for="numeroIngresado">Ingrese su numero de tarjeta: </label>
-                <input id="numeroIngresado" type="number" v-model="numeroTarjeta" v-on:keypress.enter="agregarPersona">
+                <input id="numeroIngresado" type="number" v-model="numeroTarjeta" >
+                
+                <button class="botonIngreso" v-on:click="agregarPersona">Ingresar tus datos</button>
                 <!-- <h5>Ingrese su nombre: </h5>
                 <input type="text" v-model="nombre" v-on:keypress.enter="agregarPersona">
                 <h5>Ingrese su apellido: </h5>
