@@ -11,7 +11,7 @@ const arregloPersonas = [
     // { nombre: "Andrés", apellido: "Torres" }
 ]
 
-console.log(arregloPersonas)
+// console.log(arregloPersonas)
 const app = Vue.createApp({
     data() {
         return {
@@ -34,7 +34,16 @@ const app = Vue.createApp({
             }
             
             this.miarreglo.unshift(nuevaPersona)
+            
+            
+            this.nombre=""
+            this.apellido=""
+            this.edad=""
+            this.numeroTarjeta=""
+
+            
         }
+        
     }
 
 })
