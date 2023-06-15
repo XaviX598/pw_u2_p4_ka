@@ -16,16 +16,20 @@
     </nav>
     <section>
         <div id="miAplicacion2">
+            <!-- si es true aparece si es false no aparece -->
+            <!-- <h4 v-if="false">Estudiantes UCE</h4> -->
             <h4>Estudiantes UCE</h4>
             <!-- la directiva v-model para la entrada -->
             <!-- v-on:keypress evento al presionar una tecla -->
             <!-- <input type="text" v-model="nombre" v-on:keypress="agregarEstudiante">
             <h1>{{nombre}}</h1> -->
             <!-- el .enter luego de keypress es un modificador de evento -->
+            <h5>Nombre:</h5>
             <input type="text" v-model="nombre" v-on:keypress.enter="agregarEstudiante2">
             <h1>{{nombre}}</h1>
+            <!-- <h5>Apellido:</h5>
             <input type="text" v-model="apellido" v-on:keypress.enter="agregarEstudiante2">
-            <h1>{{apellido}}</h1>
+            <h1>{{apellido}}</h1> -->
             <!-- <input type="text" v-model="apellido" v-on:keypress.enter="agregarEstudiante">
             <h1>{{apellido}}</h1> -->
             <!-- br es para salto de linea
@@ -52,7 +56,9 @@
                 <!-- index es si queremos usar un indice  -->
                 <li v-for="({nombre,apellido}, index) in miarreglo">
                     <span>{{index+1}}-{{nombre}}</span>
-                    <blockquote>{{apellido}}</blockquote>
+                    <!-- en js para comparar con algo nulo o que no existe se pone undenided -->
+                    <!-- <blockquote v-if="apellido!==undefined">Apellido:{{apellido}}</blockquote> -->
+                    <blockquote v-show="apellido!==undefined">Apellido:{{apellido}}</blockquote>
                 </li>
                 <!-- para desestructurar un objeto -->
                 <!-- <li v-for="{nombre,apellido} in mi arreglo">

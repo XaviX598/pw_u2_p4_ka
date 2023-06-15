@@ -25,7 +25,7 @@ const app = Vue.createApp({
             // propiedad reactiva nombre
             miarreglo: arregloEstudiantes,
             nombre:"",
-            apellido:""
+            // apellido:""
         }
     },
     methods:{
@@ -49,7 +49,7 @@ const app = Vue.createApp({
             // console.log('Probando el modificador de evento')
             const nuevoEstudiante = {
                 nombre:this.nombre,
-                apellido:this.apellido
+                // apellido:this.apellido
             }
             
             this.miarreglo.unshift(nuevoEstudiante)

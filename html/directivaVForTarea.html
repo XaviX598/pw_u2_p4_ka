@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    
+
     <header>
         <h1>DATOS PERSONALES</h1>
     </header>
@@ -29,7 +29,7 @@
                 <br>
                 <br>
                 <label for="apellidoIngresado">Ingrese su apellido: </label>
-                <input id="apellidoIngresado" type="text" v-model="apellido" >
+                <input id="apellidoIngresado" type="text" v-model="apellido">
                 <br>
                 <br>
                 <label for="edadIngresada">Ingrese su edad: </label>
@@ -37,9 +37,9 @@
                 <br>
                 <br>
                 <label for="numeroIngresado">Ingrese su numero de tarjeta: </label>
-                <input id="numeroIngresado" type="number" v-model="numeroTarjeta" >
-                
-                <button class="botonIngreso" v-on:click="agregarPersona" >Ingresar tus datos</button>
+                <input id="numeroIngresado" type="number" v-model="numeroTarjeta">
+
+                <button class="botonIngreso" v-on:click="agregarPersona">Ingresar tus datos</button>
                 <!-- <h5>Ingrese su nombre: </h5>
                 <input type="text" v-model="nombre" v-on:keypress.enter="agregarPersona">
                 <h5>Ingrese su apellido: </h5>
@@ -58,7 +58,6 @@
                     <li v-for="({nombre,apellido,edad,numeroTarjeta}, index) in miarreglo">
                         <span>{{index+1}}.- {Nombre: {{nombre}}}, {Apellido: {{apellido}}}, {Edad: {{edad}}}, {Numero
                             de la tarjeta: {{numeroTarjeta}}}</span>
-
                     </li>
 
                 </ul>
