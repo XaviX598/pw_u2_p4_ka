@@ -1,10 +1,7 @@
-// let num = "";
-// let igual = true;
 
 const app = Vue.createApp({
 data() {
     return {
-        num: "",
         igual: true,
         pantalla: ""
     };
@@ -12,32 +9,29 @@ data() {
 
 methods: {
     opcionesNumericas(numero) {
-    if (igual) {
-        pantalla:this.pantalla 
-        // document.getElementById("labelResultado").innerHTML =
-        // document.getElementById("labelResultado").innerHTML + numero;
+    if (this.igual) {
+        this.pantalla += numero
+        this.igual=false
+        
     } else {
-        pantalla:numero
-        // document.getElementById("labelResultado").innerHTML = numero;
-        igual:true;
+        this.pantalla =  numero
+        this.igual=false;
     }
     },
 
     simbologia(operaciones) {
-        if (operaciones == "=") {
-            document.getElementById("labelResultado").innerHTML = eval(num + document.getElementById("labelResultado").innerHTML);
-            num = "";
-            igual = false;
+        if (operaciones === "=") {
+            
+            this.pantalla =  eval(this.pantalla).toString();
         } else {
-            num +=
-            document.getElementById("labelResultado").innerHTML + operaciones;
-            document.getElementById("labelResultado").innerHTML = "";
-            console.log(num);
+            this.pantalla+= operaciones
+            this.igual =  true
         }
     },
 
     asignarNumero() {
-        parseInt(document.getElementById("labelResultado").innerHTML);
+        parseInt(this.pantalla)
+        this.igual = false
     },
 },
 
